@@ -1,16 +1,15 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React, {Fragment} from "react";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div>
-      
-    </div>
-  )
+    <Fragment>
+      <Header title="world is here" />
+      <Header title="this world is beautiful" />
+    </Fragment>
+  );
+}
+function Header({ title }) {
+  return <div>{title}</div>;
 }
 
-export default App
+export default App;
