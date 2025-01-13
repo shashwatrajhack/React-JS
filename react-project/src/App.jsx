@@ -7,7 +7,10 @@ function App() {
   return <div>
     <CardWrapper>
       <CardWrapper>
+        <CardWrapper>
         <TextComponent />
+        </CardWrapper>
+        
       </CardWrapper>
     </CardWrapper>
     <div>
