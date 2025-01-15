@@ -15,6 +15,7 @@ function App() {
     </CardWrapper>
     <div>
     <CardWrapper>hi there</CardWrapper>
+    <CardWrapper>hellooooooo everyone this is shashwat raj</CardWrapper>
 
     </div>
    
