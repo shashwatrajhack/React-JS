@@ -17,7 +17,7 @@ function App() {
 
   return (
     <>
-      {todos.map(todo => <Todo title={todo.title} description = {todo.description} />)}
+      {todos.map(todo => < Todo title={todo.title} description ={todo.description}/>)}
     </>
   )
 }
