@@ -3,7 +3,8 @@ import { useState } from 'react'
 //import viteLogo from '/vite.svg'
 import './App.css'
 import { CreateTodo } from '../components/CreateTodo'
-import { Todo } from '../components/Todo'
+import { Todo } from '../components/Todo';
+//import axios from 'axios';
 
 function App() {
   const [todos,setTodos] = useState([]);
