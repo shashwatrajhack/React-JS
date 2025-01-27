@@ -1,38 +1,36 @@
-import { useState } from 'react'
-
-import './App.css'
-import { useMemo } from 'react';
+import { useEffect, useState } from 'react'
 
 function App() {
-  const [counter,setCounter] = useState(0);
-  const [inputValue,setInputValue] = useState(1);
+  const [exchangeData, setExchangeData] = useState({});
+  const [bankData, setBankData] = useState({});
 
-  let count = useMemo(() => {
-    console.log("memo got called");
-    let finalCount = 0;
-    for(let i = 0;i<=inputValue;i++){
-    finalCount = finalCount + i;
-  }
-  return finalCount;
-},[inputValue]);
+
+  useEffect(function(){
+    setTimeout(() => {
+      setBankData({
+        returns: 100
+      });
+    }, 3000);
+  
+  },[]);
+
+  useEffect(function(){
+    setTimeout(() => {
+      setExchangeData({
+        returns: 100
+      });
+    }, 1000);
+  },[]);
+
+
+
   
 
+  const incomeTax = (bankData.income + exchangeData) * 0.3;
 
   return (
     <div>
-      <input onChange={function(e){
-        setInputValue(e.target.value)
-      }} placeholder='Sum of numbers from 1 to n'></input>
-      <br />
-      sum from 1 to {inputValue} is {count}
-      <br />
-      <button onClick={() => {
-        setCounter(counter+1);
-      }}>
-        Counter ({counter}) 
-
-      </button>
-
+        hi there, your income tax returns are {incomeTax}
     </div>
   )
 }
