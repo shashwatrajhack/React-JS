@@ -1,5 +1,4 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import  { useState, useEffect } from "react";
 
 const App = () => {
   const [quizData, setQuizData] = useState([]);
@@ -8,13 +7,10 @@ const App = () => {
   const [quizCompleted, setQuizCompleted] = useState(false);
 
   useEffect(() => {
-    axios.get("https://corsproxy.io/?https://api.jsonserve.com/Uw5CrX") // 👈 Using CORS Proxy
-      .then(response => {
-        setQuizData(response.data.questions);
-      })
-      .catch(error => {
-        console.error("Error fetching quiz data:", error);
-      });
+    fetch("https://api.jsonserve.com/Uw5CrX")
+      .then((response) => response.json())
+      .then((data) => setQuizData(data.questions))
+      .catch((error) => console.error("Error fetching quiz data:", error));
   }, []);
 
   const handleAnswer = (isCorrect) => {
