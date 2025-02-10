@@ -1,4 +1,4 @@
-
+import { atom } from "recoil";  
 
 export const networkAtom = atom({
   key: "networkAtom",
@@ -13,6 +13,6 @@ export const notificationAtom = atom({
   default: 12,
 });
 export const messagingAtom = atom({
-  key: "networkAtom",
+  key: "messagingAtom",
   default: 102,
 });
