@@ -1,4 +1,4 @@
-
+import React from 'react'
 import './App.css'
 
 function App() {
@@ -6,12 +6,10 @@ function App() {
 
   return (
     <>
-     <div className='flex'>
-      <div style={{backgroundColor:"red"}}>hii</div>
-      <div style={{backgroundColor:"green"}}>hii</div>
-      <div style={{backgroundColor:"blue"}}>hii</div>
-      <div style={{backgroundColor:"yellow"}}>hii</div>
-
+     <div className='grid grid-cols-1 md:grid-cols-3'>
+      <div className='bg-green-500'>hiiio</div>
+      <div className='bg-yellow-500'>hiioioioi</div>
+      <div className='bg-blue-500'>hioii</div>
      </div>
     </>
   )
