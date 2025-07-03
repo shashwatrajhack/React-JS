@@ -1,37 +1,34 @@
-import { useState } from 'react';
-import './App.css';
-import { useEffect } from 'react';
-import axios from 'axios';
+import React from 'react';
+
+
 
 function App() {
-  const [todos,setTodos] = useState([]);
+  const [title, setTitle] = React.useState("Hello from my vlog");
 
-  ;
+  function updateTitile(){
+    setTitle("Hello from my vlog " + Math.random());
+  }
 
-  return (
-    <>
-      {todos.map(todo => < Todo title={todo.title} description ={todo.description}/>)}
-    </>
-  )
-}
 
-function Todo({title,description}){
-  const [todos,setTodos] = useState([]);
-
-  
-  useEffect(() =>{
-    axios.get("https://sum-server.100xdevs.com/todos")
-    .then(function(response){
-      setTodos(response.data.todos);
-    })
-
-  },[])
   return <div>
-    <h1>{title}</h1>
-    {description}
+
+    <button onClick={updateTitile}>Update the title</button>
+    <Header title={title}/>
+    <Header title="Hello from my vlog 2"/>
+    <Header title="Hello from my vlog 2"/>
+    <Header title="Hello from my vlog 2"/>
+    <Header title="Hello from my vlog 2"/>
   </div>
 
 
 }
+
+
+
+const Header = React.memo(function Header({title}){
+  return<div>
+    {title}
+  </div>
+})
 
 export default App
