@@ -1,23 +1,32 @@
-import { useState } from "react";
+ import { useState } from "react";
 
-function App() {
-  const [count, setCount] = useState(0);
+ function App() {
+  const [show, setShow] = useState(false);
 
   return (
     <div>
-      <CustomButton count={count} setCount={setCount}></CustomButton>
+      <ToggleButton show={show} setShow={setShow} />
+      {show && <p>Hello World</p>}
     </div>
   );
 }
 
-//COMPONENT
-
-function CustomButton(props) {
-  function onClickHandler() {
-    props.setCount(props.count + 1);
-  }
-
-  return <button onClick={onClickHandler}>Counter {props.count}</button>;
+function ToggleButton({ show, setShow }) {
+  return (
+    <button onClick={() => setShow(!show)}>
+      {show ? "Hide" : "Show"} Message
+    </button>
+  );
 }
 
-export default App;
+// //COMPONENT
+
+// function CustomButton(props) {
+//   function onClickHandler() {
+//     props.setCount(props.count + 1);
+//   }
+
+//   return <button onClick={onClickHandler}>Counter {props.count}</button>;
+// }
+
+ export default App;
