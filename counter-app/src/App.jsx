@@ -15,7 +15,7 @@ function ToggleButton({ show, setShow }) {
   return (
     <button onClick={() => setShow(!show)}>
       {show ? "Hide" : "Show"} Message
-    </button>
+    </button>  
   );
 }
 
