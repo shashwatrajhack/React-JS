@@ -7,6 +7,7 @@
     <div>
       <ToggleButton show={show} setShow={setShow} />
       {show && <p>Hello World</p>}
+      <CustomButton />
     </div>
   );
 }
@@ -21,12 +22,14 @@ function ToggleButton({ show, setShow }) {
 
 // //COMPONENT
 
-// function CustomButton(props) {
-//   function onClickHandler() {
-//     props.setCount(props.count + 1);
-//   }
+function CustomButton() {
+  const [count,setCount]  = useState(0);
 
-//   return <button onClick={onClickHandler}>Counter {props.count}</button>;
-// }
+  function onClickHandler() {
+    setCount(count + 1);
+  }
+
+  return <button onClick={onClickHandler}>Counter {count}</button>;
+}
 
  export default App;
