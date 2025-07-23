@@ -72,4 +72,3 @@ function GrandChild({ user }) {
 }
 
 export default App;
-
